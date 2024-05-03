@@ -1,0 +1,153 @@
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  body {
+    background: #ffffff;
+    overflow: hidden;
+  }
+
+  .container {
+    color: rgba(55, 59, 65, 0.8);
+    font-family: Helvetica, sans-serif;
+    font-weight: lighter;
+    text-align: center;
+  }
+
+  h1 {
+    font-weight: normal;
+  }
+
+  li {
+    display: inline-block;
+    font-size: 1.5em;
+    list-style-type: none;
+    padding: 1em;
+    text-transform: uppercase;
+  }
+
+  li span {
+    display: block;
+    font-size: 4.5rem;
+  }
+
+  
+
+  .step-1 .cover {
+    animation: wobble 0.5s linear infinite 5s forwards;
+  }
+
+  .step-1 .icons .row span {
+    opacity: 1;
+  }
+
+  .step-2 .giftbox:after {
+    opacity: 0;
+  }
+
+  .step-3 .giftbox,
+  .step-4 .giftbox {
+    opacity: 0;
+    z-index: 1;
+  }
+
+  .step-3 .giftbox:after,
+  .step-4 .giftbox:after {
+    opacity: 0;
+  }
+
+  .step-2 .giftbox .cover {
+    animation: flyUp 2s ease-in forwards;
+  }
+
+  .step-2 .giftbox .box {
+    animation: flyDown 2s ease-in 0.05s forwards;
+  }
+
+  @keyframes wobble {
+    25% {
+      transform: rotate(4deg);
+    }
+
+    75% {
+      transform: rotate(-2deg);
+    }
+  }
+
+  @keyframes flyUp {
+    75% {
+      opacity: 1;
+    }
+
+    100% {
+      transform: translateY(-1000px) rotate(20deg);
+      opacity: 0;
+    }
+  }
+
+  @keyframes flyDown {
+    75% {
+      opacity: 1;
+    }
+
+    100% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+  }
+
+  #confetti-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  .confetti {
+    position: absolute;
+    background-color: #FFD700;
+    /* Warna emas */
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    animation: fall 3s ease-in-out infinite;
+  }
+
+  @keyframes fall {
+    0% {
+      transform: translateY(-10%);
+    }
+
+    100% {
+      transform: translateY(100vh);
+    }
+  }
+
+  /* Media Queries */
+  @media (max-width: 375px) {
+    .giftbox {
+      left: auto;
+      right: 20px; /* Menggeser posisi ke kanan 20px */
+      bottom: 10%; /* Mengatur posisi ke bawah */
+      top: auto; /* Reset nilai top */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .giftbox {
+      left: auto;
+      right: 20px; /* Menggeser posisi ke kanan 20px */
+      bottom: 10%; /* Mengatur posisi ke bawah */
+      top: auto; /* Reset nilai top */
+    }
+  }

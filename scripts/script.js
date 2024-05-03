@@ -3,7 +3,7 @@ const hoursEl = document.getElementById('hours');
 const minutesEl = document.getElementById('minutes');
 const secondsEl = document.getElementById('seconds');
 
-const targetDate = new Date('2024-05-03T00:00:00'); // Set the target date here
+const targetDate = new Date('2024-05-03T14:00:00'); // Set the target date here
 
 const updateCountdown = () => {
   const now = new Date();
@@ -13,11 +13,11 @@ const updateCountdown = () => {
     // Redirect to a new page with a transition
     const newPage = document.createElement('div');
     newPage.className = 'fade-out';
-    newPage.innerHTML = `<h1>Countdown ended!</h1><p>Redirecting to <a href="https://www.example.com">example.com</a></p>`;
+    newPage.innerHTML = `<h1>Countdown ended!</h1><p>Redirecting to <a href="ucapan.html">example.com</a></p>`;
     document.body.appendChild(newPage);
 
     setTimeout(() => {
-      window.location.href = 'https://www.example.com';
+      window.location.href = 'ucapan.html';
     }, 1000);
 
     return;
@@ -42,4 +42,4 @@ setInterval(updateCountdown, 1000);
 
 updateCountdown();
 
-// confeti
+// github
